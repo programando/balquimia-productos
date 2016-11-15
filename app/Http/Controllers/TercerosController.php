@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+ 
 use App\Http\Requests\TercerosRequest;
 
 //MODELOS
@@ -20,8 +21,9 @@ use View;
 
 class TercerosController extends Controller
 {
-   
-    public function getLogin(){
+    
+
+     public function getLogin(){
     	 
 		return View::make('terceros.login');
     }
@@ -44,6 +46,7 @@ class TercerosController extends Controller
  	}
 
  	public function getSalir(){
+
  		if ( Auth::check() ){
  				Auth::logout();
  				return Redirect::route('home')->with('alert.success', Lang::get('app_textos.logout_ok'));
